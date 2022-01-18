@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def inicio(req):
- return render(req, 'registro/inicio.html')
+ return render(req, 'singup/inicio.html')
  
 def usuarios(req):
- return render(req, 'registro/usuarios.html')
+ return render(req, 'singup/usuarios.html')
