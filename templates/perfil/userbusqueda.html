@@ -1,0 +1,18 @@
+{% extends 'perfil/padre.html' %}
+{% load static %}
+
+{% block userbusqueda %}
+
+<div>
+    <body>
+        <form action="/perfil/buscar/" method="GET">
+    
+            <p>Usuario: <input type="text" name="userbuscado"></p>
+    
+            <input type="submit" value="Buscar">
+        </form>
+    </body>    
+</div>
+
+{% endblock userbusqueda %}
+

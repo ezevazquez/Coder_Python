@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'singup',
-    'profile',
+    'perfil',
     'mensajes',
     'login',
 ]

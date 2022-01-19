@@ -1,0 +1,23 @@
+{% extends 'perfil/padre.html' %}
+{% load static %}
+
+{% block userform %}
+
+<div>
+    <body>
+        <form action="/perfil/userform/" method="POST">{% csrf_token %}
+    
+            {{usertemplate.as_table}}
+    
+            <input type="submit" value="Crear">
+        </form>
+    </body>    
+</div>
+<br> <br>
+<div>
+    <a class="btn btn-lg btn-secondary fw-bold border-white bg-white" href="{% url 'userbusqueda' %}">Búsqueda de contraseñas</a>
+</div>
+
+
+{% endblock userform %}
+
