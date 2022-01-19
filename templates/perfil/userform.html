@@ -1,0 +1,18 @@
+{% extends 'perfil/padre.html' %}
+{% load static %}
+
+{% block userform %}
+
+<div>
+    <body>
+        <form action="/perfil/userform/" method="POST">{% csrf_token %}
+    
+            {{usertemplate.as_table}}
+    
+            <input type="submit" value="Crear">
+        </form>
+    </body>    
+</div>
+
+{% endblock userform %}
+

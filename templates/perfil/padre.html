@@ -44,8 +44,10 @@
             <div>
             <h3 class="float-md-start mb-0">App Perfiles</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link" href="{% url 'userform' %}">Ususarios</a>
+                <a class="nav-link" href="{% url 'categoryform' %}">Categorias</a>
+                <a class="nav-link" href="{% url 'postform' %}">Posteos</a>
                 <a class="nav-link" href="{% url 'inicioperfil' %}">Inicio</a> 
-                <a class="nav-link" href="{% url 'perfiles' %}">Perfiles</a>
             </nav>
             </div>
         </header>
@@ -54,9 +56,17 @@
             
         {% endblock inicio %}
 
-        {% block perfiles %}
-            
-        {% endblock perfiles %}
+        {% block postform %}
+          
+        {% endblock postform %}
+
+        {% block categoryform %}
+          
+        {% endblock categoryform %}
+
+        {% block userform %}
+          
+        {% endblock userform %}
 
         <footer class="mt-auto text-white-50">
             <p></p>
