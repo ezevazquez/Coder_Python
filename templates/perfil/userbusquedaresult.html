@@ -1,0 +1,21 @@
+{% extends 'perfil/padre.html' %}
+{% load static %}
+
+{% block userbusquedaresult %}
+
+    <p>Resultados para la búsqueda {{username}}</p>
+        
+    
+    {% if passwords %}
+        
+        <ul>
+            {% for password in passwords %}
+                <li> {{password}} </li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+        
+    <a href="{% url 'userform' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Regresar a Ususarios</a>
+
+{% endblock userbusquedaresult %}

@@ -1,3 +1,4 @@
+from importlib.metadata import requires
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -9,16 +10,13 @@ from perfil.forms import *
 def inicio(request):
  return render(request, 'perfil/inicio.html')
  
-def perfiles(request):
- return render(request, 'perfil/perfiles.html')
- 
 def userform(request):
 
     if (request.method == 'POST'):
         usertemplate = myuserform(request.POST)
         if usertemplate.is_valid():
             data = usertemplate.cleaned_data
-            ususario = User(username=data["Contraseña"], password=data["contraseña"])
+            ususario = User(username=data["Usuario"], password=data["Contraseña"])
             ususario.save()
             return render(request, 'perfil/inicio.html')
         else:
@@ -26,7 +24,6 @@ def userform(request):
     else:
         usertemplate = myuserform()
     return render(request, 'perfil/userform.html', {"usertemplate":usertemplate})
-
 
 def postform(request):
 
@@ -57,3 +54,20 @@ def categoryform(request):
     else:
         categorytemplate = mycategoryform()
     return render(request, 'perfil/categoryform.html', {"categorytemplate":categorytemplate})
+
+def userbusqueda(request):
+    return render(request, 'perfil/userbusqueda.html')
+
+def buscar(request):
+    
+    # return HttpResponse(f'Estamos buscando contraseñas para el ususario {request.GET["userbuscado"]}')
+
+    if (request.method == 'GET'):
+
+        username = request.GET["userbuscado"]
+        passwords = User.objects.filter(username=username)
+
+        return render(request, 'perfil/userbusquedaresult.html', {'passwords': passwords, 'username': username})
+    
+    else:
+        return HttpResponse(f'No enviaste datos.')

@@ -47,7 +47,7 @@
                 <a class="nav-link" href="{% url 'userform' %}">Ususarios</a>
                 <a class="nav-link" href="{% url 'categoryform' %}">Categorias</a>
                 <a class="nav-link" href="{% url 'postform' %}">Posteos</a>
-                <a class="nav-link" href="{% url 'inicioperfil' %}">Inicio</a> 
+                <a class="nav-link active" href="{% url 'inicioperfil' %}">Inicio</a> 
             </nav>
             </div>
         </header>
@@ -68,6 +68,14 @@
           
         {% endblock userform %}
 
+        {% block userbusqueda %}
+          
+        {% endblock userbusqueda %}
+
+        {% block userbusquedaresult %}
+          
+        {% endblock userbusquedaresult %}
+        
         <footer class="mt-auto text-white-50">
             <p></p>
         </footer>
