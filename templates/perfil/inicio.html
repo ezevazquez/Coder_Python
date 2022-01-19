@@ -1,0 +1,15 @@
+{% extends 'perfil/padre.html' %}
+{% load static %}
+
+{% block inicio %}
+
+  <div>
+    <main class="px-3">
+        <h1>Página de inicio de perfiles</h1>
+        <p class="lead">Acá va info del inicio sobre perfiles</p>
+        <p class="lead">
+        <a href="{% url 'perfiles' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Ingreso Perfiles</a>
+    </main>
+  </div>
+
+{% endblock inicio %}
